@@ -18,7 +18,9 @@ import {
   iPolygonParamsPerNetwork,
   iXDaiParamsPerNetwork,
   iAvalancheParamsPerNetwork,
+  iOkexChainParamsPerNetwork,
   eAvalancheNetwork,
+  eOkexChainNetwork,
 } from './types';
 import { MintableERC20 } from '../types/MintableERC20';
 import { Artifact } from 'hardhat/types';
@@ -30,6 +32,7 @@ import { usingPolygon, verifyAtPolygon } from './polygon-utils';
 import { ConfigNames, loadPoolConfig } from './configuration';
 import { ZERO_ADDRESS } from './constants';
 import { getDefenderRelaySigner, usingDefender } from './defender-utils';
+import { O_EXCL } from 'constants';
 
 export type MockTokenMap = { [symbol: string]: MintableERC20 };
 
@@ -150,6 +153,8 @@ export const getParamPerNetwork = <T>(param: iParamsPerNetwork<T>, network: eNet
   const { matic, mumbai } = param as iPolygonParamsPerNetwork<T>;
   const { xdai } = param as iXDaiParamsPerNetwork<T>;
   const { avalanche, fuji } = param as iAvalancheParamsPerNetwork<T>;
+  const { exchain } = param as iOkexChainParamsPerNetwork<T>;
+
   if (process.env.FORK) {
     return param[process.env.FORK as eNetwork] as T;
   }
@@ -179,6 +184,8 @@ export const getParamPerNetwork = <T>(param: iParamsPerNetwork<T>, network: eNet
       return avalanche;
     case eAvalancheNetwork.fuji:
       return fuji;
+    case eOkexChainNetwork.exchain:
+      return exchain;
   }
 };
 
@@ -192,7 +199,10 @@ export const getOptionalParamAddressPerNetwork = (
   return getParamPerNetwork(param, network);
 };
 
-export const getParamPerPool = <T>({ proto, amm, matic, avalanche }: iParamsPerPool<T>, pool: AavePools) => {
+export const getParamPerPool = <T>(
+  { proto, amm, matic, avalanche }: iParamsPerPool<T>,
+  pool: AavePools
+) => {
   switch (pool) {
     case AavePools.proto:
       return proto;

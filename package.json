@@ -17,6 +17,7 @@
     "hardhat:mumbai": "hardhat --network mumbai",
     "hardhat:matic": "hardhat --network matic",
     "hardhat:fuji": "hardhat --network fuji",
+    "hardhat:oec": "hardhat --network oec",
     "hardhat:avalanche": "hardhat --network avalanche",
     "compile": "SKIP_LOAD=true hardhat compile",
     "console:fork": "FORK=main hardhat console",

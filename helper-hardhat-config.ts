@@ -3,6 +3,7 @@ import { HardhatNetworkForkingUserConfig, HardhatUserConfig } from 'hardhat/type
 import {
   eAvalancheNetwork,
   eEthereumNetwork,
+  eOkexChainNetwork,
   ePolygonNetwork,
   eXDaiNetwork,
   iParamsPerNetwork,
@@ -55,6 +56,7 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
   [eXDaiNetwork.xdai]: 'https://rpc.xdaichain.com/',
   [eAvalancheNetwork.avalanche]: 'https://api.avax.network/ext/bc/C/rpc',
   [eAvalancheNetwork.fuji]: 'https://api.avax-test.network/ext/bc/C/rpc',
+  [eOkexChainNetwork.exchain]: 'https://exchaintestrpc.okex.org',
 };
 
 export const NETWORKS_DEFAULT_GAS: iParamsPerNetwork<number> = {

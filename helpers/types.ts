@@ -4,7 +4,12 @@ export interface SymbolMap<T> {
   [symbol: string]: T;
 }
 
-export type eNetwork = eEthereumNetwork | ePolygonNetwork | eXDaiNetwork | eAvalancheNetwork;
+export type eNetwork =
+  | eEthereumNetwork
+  | ePolygonNetwork
+  | eXDaiNetwork
+  | eAvalancheNetwork
+  | eOkexChainNetwork;
 
 export enum eEthereumNetwork {
   buidlerevm = 'buidlerevm',
@@ -28,6 +33,10 @@ export enum eXDaiNetwork {
 export enum eAvalancheNetwork {
   avalanche = 'avalanche',
   fuji = 'fuji',
+}
+
+export enum eOkexChainNetwork {
+  exchain = 'exchain',
 }
 
 export enum EthereumNetworkNames {
@@ -413,6 +422,7 @@ export type iParamsPerNetwork<T> =
   | iEthereumParamsPerNetwork<T>
   | iPolygonParamsPerNetwork<T>
   | iXDaiParamsPerNetwork<T>
+  | iOkexChainParamsPerNetwork<T>
   | iAvalancheParamsPerNetwork<T>;
 
 export interface iParamsPerNetworkAll<T>
@@ -442,6 +452,10 @@ export interface iXDaiParamsPerNetwork<T> {
 export interface iAvalancheParamsPerNetwork<T> {
   [eAvalancheNetwork.avalanche]: T;
   [eAvalancheNetwork.fuji]: T;
+}
+
+export interface iOkexChainParamsPerNetwork<T> {
+  [eOkexChainNetwork.exchain]: T;
 }
 
 export interface iParamsPerPool<T> {

@@ -7,6 +7,7 @@ import {
   eAvalancheNetwork,
   eEthereumNetwork,
   eNetwork,
+  eOkexChainNetwork,
   ePolygonNetwork,
   eXDaiNetwork,
 } from './helpers/types';
@@ -108,6 +109,7 @@ const buidlerConfig: HardhatUserConfig = {
     xdai: getCommonNetworkConfig(eXDaiNetwork.xdai, 100),
     avalanche: getCommonNetworkConfig(eAvalancheNetwork.avalanche, 43114),
     fuji: getCommonNetworkConfig(eAvalancheNetwork.fuji, 43113),
+    oec: getCommonNetworkConfig(eOkexChainNetwork.exchain, 65),
     hardhat: {
       hardfork: 'berlin',
       blockGasLimit: DEFAULT_BLOCK_GAS_LIMIT,
