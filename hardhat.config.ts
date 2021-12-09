@@ -35,7 +35,7 @@ const DEFAULT_BLOCK_GAS_LIMIT = 8000000;
 const DEFAULT_GAS_MUL = 5;
 const HARDFORK = 'istanbul';
 const ETHERSCAN_KEY = process.env.ETHERSCAN_KEY || '';
-const MNEMONIC_PATH = "m/44'/60'/0'/0";
+const MNEMONIC_PATH = "m/44'/996'/0'/0";
 const MNEMONIC = process.env.MNEMONIC || '';
 const UNLIMITED_BYTECODE_SIZE = process.env.UNLIMITED_BYTECODE_SIZE === 'true';
 
