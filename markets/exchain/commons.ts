@@ -43,22 +43,7 @@ export const CommonsConfig: ICommonConfiguration = {
   LendingRateOracleRatesCommon: {
     WETH: {
       borrowRate: oneRay.multipliedBy(0.03).toFixed(),
-    },
-    DAI: {
-      borrowRate: oneRay.multipliedBy(0.039).toFixed(),
-    },
-    USDC: {
-      borrowRate: oneRay.multipliedBy(0.039).toFixed(),
-    },
-    USDT: {
-      borrowRate: oneRay.multipliedBy(0.035).toFixed(),
-    },
-    WBTC: {
-      borrowRate: oneRay.multipliedBy(0.03).toFixed(),
-    },
-    STAKE: {
-      borrowRate: oneRay.multipliedBy(0.05).toFixed(), // TEMP
-    },
+    }
   },
   // ----------------
   // COMMON PROTOCOL ADDRESSES ACROSS POOLS
@@ -105,11 +90,11 @@ export const CommonsConfig: ICommonConfiguration = {
   },
   ChainlinkAggregator: {
     [eOkexChainNetwork.exchain]: {
-      DAI: ZERO_ADDRESS,
-      USDC: ZERO_ADDRESS,
-      USDT: ZERO_ADDRESS,
-      WBTC: ZERO_ADDRESS,
-      STAKE: ZERO_ADDRESS,
+      DAI: '0xd04647B7CB523bb9f26730E9B6dE1174db7591Ad',
+      USDC: '0xd04647B7CB523bb9f26730E9B6dE1174db7591Ad',
+      USDT: '0xd04647B7CB523bb9f26730E9B6dE1174db7591Ad',
+      WBTC: '0xd04647B7CB523bb9f26730E9B6dE1174db7591Ad',
+      USD: '0xd04647B7CB523bb9f26730E9B6dE1174db7591Ad'
     },
   },
   ReserveAssets: {
@@ -120,13 +105,13 @@ export const CommonsConfig: ICommonConfiguration = {
     [eOkexChainNetwork.exchain]: '',
   },
   WETH: {
-    [eOkexChainNetwork.exchain]: '', // DAI: xDAI is the base token, DAI is also there, We need WXDAI
+    [eOkexChainNetwork.exchain]: '',
   },
   WrappedNativeToken: {
-    [eOkexChainNetwork.exchain]: '', // DAI: xDAI is the base token, DAI is also there, We need WXDAI
+    [eOkexChainNetwork.exchain]: '',
   },
   ReserveFactorTreasuryAddress: {
-    [eOkexChainNetwork.exchain]: '', // TEMP
+    [eOkexChainNetwork.exchain]: '',
   },
   IncentivesController: {
     [eOkexChainNetwork.exchain]: ZERO_ADDRESS,
