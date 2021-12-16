@@ -6,7 +6,7 @@ import {
   ZERO_ADDRESS,
   MOCK_CHAINLINK_AGGREGATORS_PRICES,
 } from '../../helpers/constants';
-import { ICommonConfiguration, eXDaiNetwork, eOkexChainNetwork } from '../../helpers/types';
+import { ICommonConfiguration, eOkexChainNetwork } from '../../helpers/types';
 
 // ----------------
 // PROTOCOL GLOBAL PARAMS
@@ -57,7 +57,7 @@ export const CommonsConfig: ICommonConfiguration = {
   EmergencyAdmin: {
     [eOkexChainNetwork.exchain]: undefined,
   },
-  EmergencyAdminIndex: 1,
+  EmergencyAdminIndex: 0,
   ProviderRegistry: {
     [eOkexChainNetwork.exchain]: '',
   },
