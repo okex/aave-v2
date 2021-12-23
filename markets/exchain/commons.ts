@@ -111,7 +111,8 @@ export const CommonsConfig: ICommonConfiguration = {
     [eOkexChainNetwork.exchain]: '',
   },
   ReserveFactorTreasuryAddress: {
-    [eOkexChainNetwork.exchain]: '',
+    // the fouth address of the HD wallet
+    [eOkexChainNetwork.exchain]: '0x344239c75b0b66D800a0d558752D53F90f9517F2',
   },
   IncentivesController: {
     [eOkexChainNetwork.exchain]: ZERO_ADDRESS,
